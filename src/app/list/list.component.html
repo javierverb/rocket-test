@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>rocket_id</th>
+    <th>mission_name</th>
+    <th>launch_year</th>
+  </tr>
+  <tr *ngFor="let item of launches">
+    <a [routerLink]="['details', item.flight_number, item.rocket.rocket_id]"
+      ><td>{{ item.rocket.rocket_id }}</td></a
+    >
+    <td>{{ item.mission_name }}</td>
+    <td>{{ item.launch_year }}</td>
+  </tr>
+</table>

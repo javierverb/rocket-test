@@ -1,0 +1,43 @@
+<div *ngIf="combinendObject">
+  <div>
+    <button
+      [disabled]="isFav(combinendObject.flight_number)"
+      (click)="like(combinendObject.flight_number)"
+    >
+      Fav
+    </button>
+  </div>
+
+  <table>
+    <tr>
+      <th>flight_number</th>
+      <th>mission_name</th>
+      <th>launch_date_unix</th>
+      <th>rocket-info</th>
+    </tr>
+    <tr>
+      <td>{{ combinendObject.flight_number }}</td>
+      <td>{{ combinendObject.mission_name }}</td>
+      <td>{{ combinendObject.launch_date_unix }}</td>
+      <td>{{ combinendObject.rocket | json }}</td>
+    </tr>
+  </table>
+
+  <!--
+
+
+        {
+          flight_number: 39,
+          mission_name: "NROL-76",
+          launch_date_unix: 1493637300,
+          description:
+          rocket: {
+            rocket_id: "falcon1",
+            rocket_name: "Falcon 1",
+            active: true,
+            cost_per_launch: 6700000,
+            company: "SpaceX"
+          },
+        }
+   -->
+</div>
